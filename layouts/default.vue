@@ -12,9 +12,17 @@
               <div class="hidden sm:block sm:ml-6">
                 <div class="flex space-x-4">
                   <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                  <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
+                  <nuxt-link to="/" :class="{
+                    'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium': $route.name === 'index',
+                    'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium': $route.name !== 'index'
+                  }">Home</nuxt-link>
+                  <nuxt-link to="/categories" :class="{
+                    'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium': $route.name === 'categories',
+                    'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium': $route.name !== 'categories'
+                  }">Categoria</nuxt-link>
+                  <!-- <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
 
-                  <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Categorias</a>
+                  <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Categorias</a> -->
                 </div>
               </div>
             </div>
@@ -39,7 +47,13 @@
         </div>
       </nav>
     </header>
-    <Nuxt />
+    <div class="max-w-7xl mx-auto p-4">
+      <div class="mt-4">
+
+        <Nuxt />
+
+      </div>
+    </div>
   </div>
 </template>
 

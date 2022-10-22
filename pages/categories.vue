@@ -1,7 +1,5 @@
 <template>
   <div>
-    <div class="max-w-7xl mx-auto p-4">
-      <div class="mt-4">
         <div class="flex items-center justify-between">
           <h1 class="font-bold text-2xl">
             Categorias
@@ -84,8 +82,6 @@
           </table>
         </div>
       </div>
-    </div>
-  </div>
 </template>
 
 <script>
