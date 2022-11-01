@@ -72,7 +72,13 @@ export default {
   },
   methods:{
     addTransaction(){
-      this.$store.dispatch('transactions/addTransaction',this.form);
+      this.$store.dispatch('transactions/addTransaction',this.form)
+      .then((response)=>{
+        this.$emit('after-add',{
+          ...response,
+          category: this.categories.find(i => i.id == this.form.categoryId)
+        })
+      });
     },
     onCancel(){
       this.$emit('cancel')
